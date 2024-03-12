@@ -1,0 +1,507 @@
+﻿<krpano version="1.21" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="true"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="false"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               autotour="false"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+	
+	<scene name="scene_Punto_de_Reunion" title="Punto_de_Reunion" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Punto_de_Reunion.tiles/thumb.jpg" lat="18.48764444" lng="-69.96384444" alt="22.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Punto_de_Reunion.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Punto_de_Reunion.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Punto_de_Reunion.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-132.826" atv="-0.200" linkedscene="scene_cajero-bhd" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-178.110" atv="0.725" linkedscene="scene_aj-piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="127.579" atv="5.741" linkedscene="scene_ascientos_afuera-cba" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="85.198" atv="4.599" linkedscene="scene_pasillo_hacia_er" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-15.104" atv="-4.248" linkedscene="scene_lado_ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="-55.954" atv="-8.250" linkedscene="scene_salida_de_emergencia-ah_piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="-80.406" atv="-1.823" linkedscene="scene_ascientos_salida_de_emergencia" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+	
+	<scene name="scene_AJ-piso1" title="AJ-piso1" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/AJ-piso1.tiles/thumb.jpg" lat="18.48766111" lng="-69.96380833" alt="22.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/AJ-piso1.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/AJ-piso1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/AJ-piso1.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Ascientos_afuera-CBA" title="Ascientos_afuera-CBA" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Ascientos_afuera-CBA.tiles/thumb.jpg" lat="18.48758889" lng="-69.96368611" alt="22.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Ascientos_afuera-CBA.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Ascientos_afuera-CBA.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Ascientos_afuera-CBA.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Ascientos_Salida_de_Emergencia" title="Ascientos_Salida_de_Emergencia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Ascientos_Salida_de_Emergencia.tiles/thumb.jpg" lat="18.48780000" lng="-69.96360833" alt="25.50" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-132.342" vlookat="-1.018" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Ascientos_Salida_de_Emergencia.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Ascientos_Salida_de_Emergencia.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Ascientos_Salida_de_Emergencia.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-126.678" atv="-5.864" linkedscene="scene_salida_de_emergencia-ah_piso1" linkedscene_lookat="0.0,0.0,120.0" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="6.140" atv="3.779" linkedscene="scene_punto_de_reunion" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="43.845" atv="1.932" linkedscene="scene_aj-piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Cajero-BHD" title="Cajero-BHD" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Cajero-BHD.tiles/thumb.jpg" lat="18.48774722" lng="-69.96379722" alt="22.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Cajero-BHD.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Cajero-BHD.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Cajero-BHD.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Debajo_AH-2" title="Debajo_AH-2" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Debajo_AH-2.tiles/thumb.jpg" lat="18.48776111" lng="-69.96351111" alt="23.39" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Debajo_AH-2.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Debajo_AH-2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Debajo_AH-2.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-127.568" atv="2.641" linkedscene="scene_entrada-ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="169.861" atv="5.413" linkedscene="scene_debajo_ah-2" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Debajo_AH" title="Debajo_AH" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Debajo_AH.tiles/thumb.jpg" lat="18.48777222" lng="-69.96347778" alt="23.39" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Debajo_AH.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Debajo_AH.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Debajo_AH.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="5.462" atv="2.468" linkedscene="scene_lado_ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="131.675" atv="0.692" linkedscene="scene_entrada-ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-166.954" atv="7.265" linkedscene="scene_debajo_ah-2" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Entrada-AH" title="Entrada-AH" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Entrada-AH.tiles/thumb.jpg" lat="18.48775556" lng="-69.96353889" alt="23.39" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Entrada-AH.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Entrada-AH.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Entrada-AH.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.369" atv="16.906" linkedscene="scene_interseccion-ah_piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="138.376" atv="13.962" linkedscene="scene_debajo_ah-2" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-165.349" atv="10.086" linkedscene="scene_debajo_ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Entrada-Laboratorio_Realidad_Extendida" title="Entrada-Laboratorio_Realidad_Extendida" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Entrada-Laboratorio_Realidad_Extendida.tiles/thumb.jpg" lat="18.48795278" lng="-69.96348056" alt="27.50" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Entrada-Laboratorio_Realidad_Extendida.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Entrada-Laboratorio_Realidad_Extendida.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Entrada-Laboratorio_Realidad_Extendida.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Entrada_Ascensor-AH_piso1" title="Entrada_Ascensor-AH_piso1" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Entrada_Ascensor-AH_piso1.tiles/thumb.jpg" lat="18.48784167" lng="-69.96353889" alt="23.39" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Entrada_Ascensor-AH_piso1.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Entrada_Ascensor-AH_piso1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Entrada_Ascensor-AH_piso1.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-58.953" atv="-2.366" linkedscene="scene_salida_de_emergencia-ah_piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="94.397" atv="8.229" linkedscene="scene_interseccion-ah_piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="111.037" atv="5.160" linkedscene="scene_escaleras_de_emergencia-piso2" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Entrada_Ascensor-AH_piso2" title="Entrada_Ascensor-AH_piso2" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Entrada_Ascensor-AH_piso2.tiles/thumb.jpg" lat="18.48783056" lng="-69.96354722" alt="27.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Entrada_Ascensor-AH_piso2.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Entrada_Ascensor-AH_piso2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Entrada_Ascensor-AH_piso2.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="95.990" atv="6.652" linkedscene="scene_interseccion-ah_piso2" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="115.475" atv="5.802" linkedscene="scene_escaleras_de_emergencia-piso2_entrada" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Entrada_Laboratorios_de_Simulacion" title="Entrada_Laboratorios_de_Simulacion" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Entrada_Laboratorios_de_Simulacion.tiles/thumb.jpg" lat="18.48797222" lng="-69.96350000" alt="27.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Entrada_Laboratorios_de_Simulacion.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Entrada_Laboratorios_de_Simulacion.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Entrada_Laboratorios_de_Simulacion.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-4.744" atv="10.393" linkedscene="scene_pasillo_laboratorios_de_simulacion" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="164.705" atv="0.162" linkedscene="scene_interseccion-ah_piso2" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Escaleras_de_emergencia-piso2" title="Escaleras_de_emergencia-piso2" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Escaleras_de_emergencia-piso2.tiles/thumb.jpg" lat="18.48770833" lng="-69.96360278" alt="22.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.000" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Escaleras_de_emergencia-piso2.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Escaleras_de_emergencia-piso2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Escaleras_de_emergencia-piso2.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-18.551" atv="-16.304" linkedscene="scene_escaleras_de_emergencia-piso2_entrada" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Escaleras_de_emergencia-piso2_entrada" title="Escaleras_de_emergencia-piso2_entrada" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Escaleras_de_emergencia-piso2_entrada.tiles/thumb.jpg" lat="18.48776667" lng="-69.96358333" alt="27.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="130.140" vlookat="8.297" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Escaleras_de_emergencia-piso2_entrada.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Escaleras_de_emergencia-piso2_entrada.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Escaleras_de_emergencia-piso2_entrada.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="128.186" atv="2.219" linkedscene="scene_entrada_ascensor-ah_piso2" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Interseccion-AH_piso1" title="Interseccion-AH_piso1" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Interseccion-AH_piso1.tiles/thumb.jpg" lat="18.48785000" lng="-69.96351389" alt="23.39" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Interseccion-AH_piso1.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Interseccion-AH_piso1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Interseccion-AH_piso1.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-105.871" atv="13.820" linkedscene="scene_entrada-ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-7.331" atv="2.789" linkedscene="scene_entrada_ascensor-ah_piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Interseccion-AH_piso2" title="Interseccion-AH_piso2" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Interseccion-AH_piso2.tiles/thumb.jpg" lat="18.48784722" lng="-69.96352500" alt="27.50" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Interseccion-AH_piso2.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Interseccion-AH_piso2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Interseccion-AH_piso2.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-110.360" atv="-2.234" linkedscene="scene_escaleras_de_emergencia-piso2_entrada" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-94.266" atv="1.141" linkedscene="scene_entrada_ascensor-ah_piso2" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-1.250" atv="0.973" linkedscene="scene_entrada_laboratorios_de_simulacion" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Lado_AH" title="Lado_AH" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Lado_AH.tiles/thumb.jpg" lat="18.48785278" lng="-69.96367222" alt="25.79" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Lado_AH.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Lado_AH.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Lado_AH.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="10.648" atv="5.149" linkedscene="scene_punto_de_reunion" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-171.815" atv="2.773" linkedscene="scene_debajo_ah" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Pasillo_hacia_ER" title="Pasillo_hacia_ER" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Pasillo_hacia_ER.tiles/thumb.jpg" lat="18.48761111" lng="-69.96379167" alt="22.89" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Pasillo_hacia_ER.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Pasillo_hacia_ER.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Pasillo_hacia_ER.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Pasillo_Laboratorios_de_Simulacion" title="Pasillo_Laboratorios_de_Simulacion" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Pasillo_Laboratorios_de_Simulacion.tiles/thumb.jpg" lat="18.48794444" lng="-69.96349444" alt="27.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Pasillo_Laboratorios_de_Simulacion.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Pasillo_Laboratorios_de_Simulacion.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Pasillo_Laboratorios_de_Simulacion.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.033" atv="4.119" linkedscene="scene_entrada-laboratorio_realidad_extendida" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-167.461" atv="8.506" linkedscene="scene_entrada_laboratorios_de_simulacion" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+	<scene name="scene_Piso_2-Entrada_Escaleras_de_Emergencia" title="Piso_2-Entrada_Escaleras_de_Emergencia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Piso_2-Entrada_Escaleras_de_Emergencia.tiles/thumb.jpg" lat="18.48781389" lng="-69.96356944" alt="27.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Piso_2-Entrada_Escaleras_de_Emergencia.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Piso_2-Entrada_Escaleras_de_Emergencia.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Piso_2-Entrada_Escaleras_de_Emergencia.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	
+
+	<scene name="scene_Salida_de_Emergencia-AH_piso1" title="Salida_de_Emergencia-AH_piso1" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/Salida_de_Emergencia-AH_piso1.tiles/thumb.jpg" lat="18.48782222" lng="-69.96364444" alt="23.39" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Salida_de_Emergencia-AH_piso1.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0" if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/Salida_de_Emergencia-AH_piso1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image prealign="0|0.0|0" if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/Salida_de_Emergencia-AH_piso1.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-130.057" atv="4.441" linkedscene="scene_entrada_ascensor-ah_piso1" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="45.922" atv="11.366" linkedscene="scene_ascientos_salida_de_emergencia" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="27.068" atv="3.868" linkedscene="scene_punto_de_reunion" linkedscene_hoffset="0.0" use3dtransition="true" />
+
+	</scene>
+
+
+</krpano>
